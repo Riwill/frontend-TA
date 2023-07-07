@@ -9,6 +9,7 @@ import TopSellingTable from './shared/TopSellingTable';
 import UpgradeCard from './shared/UpgradeCard';
 import BarChart from 'react-bar-chart';
 import { Row, Col } from 'reactstrap';
+import ComparisonChart from '../charts/echarts/ComparisonChart';
 
 const ContentBox = styled('div')(({ theme }) => ({
   margin: '30px',
@@ -17,16 +18,17 @@ const ContentBox = styled('div')(({ theme }) => ({
 
 const Title = styled('span')(() => ({
   fontSize: '1rem',
-  fontWeight: '500',
   marginRight: '.5rem',
+  fontWeight: '500',
   textTransform: 'capitalize',
 }));
 
 const data = [
-  { text: 'Kapal Penyebrang', value: 500 },
-  { text: 'Kapal Penumpang', value: 300 },
-  { text: 'General Cargo', value: 800 },
-  { text: 'Kapal Barang', value: 100 },
+  ['Qty'],
+  ['Kapal Penyebrang', 2200],
+  ['Kapal Penumpang', 800],
+  ['General Cargo', 700],
+  ['Kapal Barang', 1500],
 ];
 
 const dataPie1 = [
@@ -82,11 +84,12 @@ const Analytics = () => {
           </Grid> */}
           <Grid item lg={8} md={8} sm={12} xs={12}>
             <Card sx={{ px: 3, py: 2, mb: 3 }}>
-              <BarChart ylabel='Quantity'
-                width={1000}
-                height={700}
-                margin={margin}
-                data={data} />
+              <Title>Total Vessel</Title>
+              <ComparisonChart
+                height="680px"
+                color={[palette.primary.dark, palette.primary.main, palette.primary.light]}
+                data={data}
+              />
             </Card>
           </Grid>
           <Grid item lg={4} md={4} sm={12} xs={12}>
@@ -156,7 +159,7 @@ const Analytics = () => {
                   backgroundColor: '#e8f4ea',
                   color: '#b8d8be',
                   fontWeight: 'bold',
-                  padding: '30px',
+                  padding: '34px',
                   borderRadius: '1em',
                 }}
               >
@@ -175,7 +178,7 @@ const Analytics = () => {
                   backgroundColor: '#FFDF9E',
                   color: '#FF971A',
                   fontWeight: 'bold',
-                  padding: '30px',
+                  padding: '34px',
                   borderRadius: '1em',
                 }}
               >
@@ -194,7 +197,7 @@ const Analytics = () => {
                   backgroundColor: '#BFD4DB',
                   color: '#78A2CC',
                   fontWeight: 'bold',
-                  padding: '30px',
+                  padding: '34px',
                   borderRadius: '1em',
                 }}
               >
@@ -213,7 +216,7 @@ const Analytics = () => {
                   backgroundColor: '#FFA9A9',
                   color: '#FF6962',
                   fontWeight: 'bold',
-                  padding: '30px',
+                  padding: '34px',
                   borderRadius: '1em',
                 }}
               >

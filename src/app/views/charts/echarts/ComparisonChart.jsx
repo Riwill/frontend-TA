@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/system';
 import ReactEcharts from 'echarts-for-react';
 
-const ComparisonChart = ({ height, color = [] }) => {
+const ComparisonChart = ({ height, color = [], data }) => {
   const theme = useTheme();
 
   const option = {
@@ -11,15 +11,7 @@ const ComparisonChart = ({ height, color = [] }) => {
     barGap: 0,
     barMaxWidth: '64px',
     dataset: {
-      source: [
-        ['Month', 'Website', 'App'],
-        ['Jan', 2200, 1200],
-        ['Feb', 800, 500],
-        ['Mar', 700, 1350],
-        ['Apr', 1500, 1250],
-        ['May', 2450, 450],
-        ['June', 1700, 1250],
-      ],
+      source: data
     },
     xAxis: {
       type: 'category',
@@ -46,7 +38,7 @@ const ComparisonChart = ({ height, color = [] }) => {
     },
     // Declare several bar series, each will be mapped
     // to a column of dataset.source by default.
-    series: [{ type: 'bar' }, { type: 'bar' }],
+    series: [{ type: 'bar' }],
   };
 
   return <ReactEcharts style={{ height: height }} option={{ ...option }} />;
