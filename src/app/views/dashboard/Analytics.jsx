@@ -7,7 +7,6 @@ import StatCards from './shared/StatCards';
 import StatCards2 from './shared/StatCards2';
 import TopSellingTable from './shared/TopSellingTable';
 import UpgradeCard from './shared/UpgradeCard';
-import BarChart from 'react-bar-chart';
 import { Row, Col } from 'reactstrap';
 import ComparisonChart from '../charts/echarts/ComparisonChart';
 
